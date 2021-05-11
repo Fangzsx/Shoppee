@@ -16,6 +16,7 @@ public class Login extends JFrame {
         Container mainContainer = this.getContentPane();
         mainContainer.setLayout(new BorderLayout(5,6));
 
+        //top panel
         JPanel topPanel = new JPanel();
         topPanel.setBackground(new Color(235, 79, 7));
         JLabel nameLabel = new JLabel("SHOPPEE");
@@ -23,9 +24,24 @@ public class Login extends JFrame {
         nameLabel.setForeground(Color.WHITE);
         topPanel.add(nameLabel);
 
+        //west panel
+        JPanel usernamePanel = new JPanel();
+        usernamePanel.setLayout(new FlowLayout(5,5,5));
+        JLabel usernameLabel = new JLabel("Username ");
+        JTextField usernameTF = new JTextField(15);
+        usernamePanel.add(usernameLabel);
+        usernamePanel.add(usernameTF);
+
+        //center panel
+        JPanel centerPanel = new JPanel();
+        centerPanel.setBackground(Color.YELLOW);
+
+
+
+        //north
         mainContainer.add(topPanel, BorderLayout.NORTH);
-
-
+        //west
+        mainContainer.add(usernamePanel, BorderLayout.WEST);
 
 
 
@@ -35,7 +51,7 @@ public class Login extends JFrame {
 
     public static void main(String[] args) {
 
-        Login login = new Login("Login");
+        Login login = new Login("Shoppee");
         login.setVisible(true);
 
     }
