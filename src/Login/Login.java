@@ -15,7 +15,15 @@ public class Login extends JFrame {
 
         Container mainContainer = this.getContentPane();
         mainContainer.setLayout(new BorderLayout(5,6));
-        mainContainer.setBackground(Color.GRAY);
+
+        JPanel topPanel = new JPanel();
+        topPanel.setBackground(new Color(235, 79, 7));
+        JLabel nameLabel = new JLabel("SHOPPEE");
+        nameLabel.setFont(new Font("Verdana", Font.BOLD,18));
+        nameLabel.setForeground(Color.WHITE);
+        topPanel.add(nameLabel);
+
+        mainContainer.add(topPanel, BorderLayout.NORTH);
 
 
 
