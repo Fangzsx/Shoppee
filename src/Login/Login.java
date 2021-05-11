@@ -1,6 +1,7 @@
 package Login;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 
@@ -9,7 +10,7 @@ public class Login extends JFrame {
     public Login(String title){
         super(title);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(400,150);
+        this.setSize(400,180);
         this.setLocation(100,100);
 
 
@@ -25,24 +26,35 @@ public class Login extends JFrame {
         topPanel.add(nameLabel);
 
         //west panel
-        JPanel usernamePanel = new JPanel();
-        usernamePanel.setLayout(new FlowLayout(5,5,5));
-        JLabel usernameLabel = new JLabel("Username ");
-        JTextField usernameTF = new JTextField(15);
-        usernamePanel.add(usernameLabel);
-        usernamePanel.add(usernameTF);
-
-        //center panel
         JPanel centerPanel = new JPanel();
-        centerPanel.setBackground(Color.YELLOW);
+        centerPanel.setBorder(new EmptyBorder(10,10,10,10));
+        GridLayout grid = new GridLayout(2,2);
+        grid.setHgap(10);
+        centerPanel.setLayout(grid);
+
+        JLabel usernameLabel = new JLabel("Username");
+        JTextField usernameTF = new JTextField(10);
+        JLabel passwordLabel = new JLabel("Password");
+        JPasswordField passwordField = new JPasswordField(10);
+        centerPanel.add(usernameLabel);
+        centerPanel.add(usernameTF);
+        centerPanel.add(passwordLabel);
+        centerPanel.add(passwordField);
+
+        //south panel
+        JPanel southPanel = new JPanel();
+        JButton loginButton = new JButton("Log in");
+        southPanel.add(loginButton);
+
 
 
 
         //north
         mainContainer.add(topPanel, BorderLayout.NORTH);
-        //west
-        mainContainer.add(usernamePanel, BorderLayout.WEST);
-
+        //center
+        mainContainer.add(centerPanel, BorderLayout.WEST);
+        //bottom
+        mainContainer.add(southPanel, BorderLayout.SOUTH);
 
 
     }
